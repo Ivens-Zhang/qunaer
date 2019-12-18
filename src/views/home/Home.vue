@@ -43,7 +43,7 @@ export default {
         this.swiperList = resData.swiperList
         this.iconList = resData.iconList
         this.recommendList = resData.recommendList
-        this.weekendList = resData.recommendList
+        this.weekendList = resData.weekendList
       }
     }
   },

@@ -32,7 +32,7 @@ export default {
   .item-img-wapper
     overflow hidden
     height : 0
-    padding-bottom : 37.09%
+    padding-bottom : 38%
     width : 100%
     .item-img
       width : 100%
