@@ -6,7 +6,8 @@
     <div class="search-content" v-show="keyword">
       <ul>
         <li class="search-item border-bottom"
-         v-for="(item, index) in result" :key="index">
+         v-for="(item, index) in result" :key="index"
+         @click="handleCityClick(item.name)">
           {{item.name}}
         </li>
         <li v-show="!result.length" class="search-item border-bottom">
@@ -28,6 +29,12 @@ export default {
   },
   props: {
     cityList: Object
+  },
+  methods: {
+    handleCityClick (city) {
+      this.$store.dispatch('changeCurrentCity', city)
+      this.$router.push('/')
+    }
   },
   watch: {
     keyword () {
