@@ -39,12 +39,19 @@ export default {
   name: 'CityList',
   props: {
     cityList: Object,
-    hotCities: Array
+    hotCities: Array,
+    alpha: String
   },
   methods: {
     handleCityClick (city) {
       this.$store.dispatch('changeCurrentCity', city)
       this.$router.push('/')
+    }
+  },
+  watch: {
+    alpha () {
+      let ele = this.$refs[this.alpha][0]
+      this.scroll.scrollToElement(ele)
     }
   },
   mounted () {
