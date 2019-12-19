@@ -17,7 +17,7 @@ import DetailHeader from './components/Header.vue'
 import DetailList from './components/List.vue'
 import axios from 'axios'
 export default {
-  name: 'Home',
+  name: 'Detail',
   components: {
     DetailBanner,
     DetailHeader,
@@ -33,7 +33,11 @@ export default {
   },
   methods: {
     getDetail () {
-      axios.get('/mock/detail.json').then(this.getDetailSucc)
+      axios.get('/mock/detail.json', {
+        params: {
+          id: this.$route.params.id
+        }
+      }).then(this.getDetailSucc)
     },
     getDetailSucc (res) {
       let resData = res.data.data

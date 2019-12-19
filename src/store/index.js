@@ -3,14 +3,25 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+let defaultCity = '昆山'
+
+try {
+  if (localStorage.city) {
+    defaultCity = localStorage.city
+  }
+} catch (error) {}
+
 export default new Vuex.Store({
   state: {
-    currentCity: '昆山'
+    currentCity: defaultCity
   },
   mutations: {
     changeCurrentCityM (state, city) {
       console.log(city)
-      this.state.currentCity = city
+      state.currentCity = city
+      try {
+        localStorage.city = city
+      } catch (error) {}
     }
   },
   actions: {

@@ -34,7 +34,11 @@ export default {
   },
   methods: {
     getIndex () {
-      axios.get('/mock/index.json').then(this.getIndexSucc)
+      axios.get('/mock/index.json', {
+        params: {
+          city: this.$store.state.currentCity
+        }
+      }).then(this.getIndexSucc)
     },
     getIndexSucc (res) {
       const resData = res.data.data
