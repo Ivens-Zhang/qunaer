@@ -1,18 +1,3 @@
----
-layout: post
-title: "慕课网课程 《去哪儿 APP》 思路分析及源码"
-subtitle: '————基于 Vue 2.x 版本'
-author: "Ivens"
-header-mask: 0.2
-catalog: true
-header-img: "img/in-post/2019-12-17/th.jpg"
-tags:
-  - Vue.js
----
-
-`<router-view>` 默认显示 `path: '/'` 的组件. 
-
-`template` 只能对外暴露一个标签.
 
 ## 前言
 
