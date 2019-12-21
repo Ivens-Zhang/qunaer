@@ -25,7 +25,6 @@ export default {
   methods: {
     handleScroll () {
       let top = document.documentElement.scrollTop
-      console.log(top)
       this.opacityStyle.opacity = (top - 35) / 100
     }
   },
