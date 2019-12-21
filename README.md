@@ -1,19 +1,3 @@
----
-layout: post
-title: "慕课网课程 《去哪儿 APP》 思路分析及源码"
-subtitle: '————基于 Vue 2.x 版本'
-author: "Ivens"
-header-mask: 0.2
-catalog: true
-header-img: "img/in-post/2019-12-17/th.jpg"
-tags:
-  - Vue.js
----
-
-`<router-view>` 默认显示 `path: '/'` 的组件. 
-
-`template` 只能对外暴露一个标签.
-
 ## 前言
 
 这篇文章为：[《Vue2.5开发去哪儿网App
@@ -117,6 +101,8 @@ F:.
         Weekend.vue
 ```
 
+***
+
 **`Iconfont` 的使用方法:**
 
 1. 进入 `iconfont` 官网, 将图标添加至项目.
@@ -138,12 +124,16 @@ F:.
             iconfont.woff
 ```
 
+***
+
 **ajax 请求的实现步骤:**
 1. 在 `Home.vue` 的 `script` 里添加引用 `axios`
 
 ```js
 import axios from 'axios'
 ```
+
+***
 
 2. 在 `methods` 中添加两个方法
 
@@ -216,6 +206,7 @@ F:.
         Header.vue
         List.vue
 ```
+***
 
 **router 中 path 后加的 `:id` 是什么用?**
 
@@ -380,6 +371,8 @@ F:.
         Search.vue
 ```
 
+***
+
 **如何实现城市搜索?**
 
 1. 定义变量 `keyword` 接收搜索框中输入的字母
@@ -388,6 +381,8 @@ F:.
 4. 最后把新数组的值赋给结果数组遍历即可.
 
 为什么要新建数组当做容器? 因为随着键盘输入, 我们将对应的值 push 进新数组, 可是输入值改变, 我们并没有 pop 掉不对应的数组, 只好动态创建一个空数组, 存放每次的结果, 最后将值赋予结果数组, 这样才能保证结果正确.
+
+***
 
 **使用 `vuex` 时, 修改 state 中值的流程**
 
@@ -419,12 +414,15 @@ actions: {
 }
 ```
 
+***
+
 **`vuex` 中为什么要使用 `try catch`?**
 
 使用 `try catch` 是为了增加程序健壮性, 防止出现崩溃.
 
 在 `vuex` 中我们让 `city` 的值为 `localStorage.city`, 有时当浏览器不支持 `localStorage` 或 开启隐身模式时, 我们无法获取 `localStorage`.
 
+***
 
 **实现右侧字母表对应城市列表的原理.**
 
@@ -448,6 +446,8 @@ actions: {
 
 1. 在 `activated` 中判断是否与上次的数据一致, 如果不一致则重新发送 `ajax` 请求
 2. 在 `<keep-alive>` 中添加 `exclude="组件名,组件名,..."` (组件名为组件中定义的 `name`)
+
+***
 
 **组件中name属性的作用**
 1. 递归组件
