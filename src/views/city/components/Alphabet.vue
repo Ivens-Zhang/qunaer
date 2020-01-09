@@ -26,7 +26,6 @@ export default {
   },
   updated () {
     this.startY = this.$refs['Aalpha'][0].offsetTop
-    console.log(this.startY)
   },
   methods: {
     hanleAlphabetClick (index) {

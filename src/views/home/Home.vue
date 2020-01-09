@@ -43,7 +43,6 @@ export default {
     getIndexSucc (res) {
       const resData = res.data.data
       if (resData && res.data.ret) {
-        console.log(resData)
         this.swiperList = resData.swiperList
         this.iconList = resData.iconList
         this.recommendList = resData.recommendList

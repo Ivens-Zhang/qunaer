@@ -17,7 +17,6 @@ export default new Vuex.Store({
   },
   mutations: {
     changeCurrentCityM (state, city) {
-      console.log(city)
       state.currentCity = city
       try {
         localStorage.city = city
